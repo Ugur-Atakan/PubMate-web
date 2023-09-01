@@ -1,11 +1,24 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 
-class YeniEkle extends Component {
-
-    render() {
-      
-        let publicUrl = process.env.PUBLIC_URL+'/'
-
+export default function YeniEkle() {
+  const [isletme, setisletme] = useState({
+    isletmeAdi: "",
+    isletmeTuru: "",
+    fiyatlandirma: "",
+    il: "",
+    ilce: "",
+    mahalle: "",
+    sokak: "",
+    no: "",
+  });
+ let publicUrl = process.env.PUBLIC_URL+'/'
+  const handleChange = (e) => {
+    setisletme({ ...isletme, [e.target.name]: e.target.value });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(isletme);
+  };
     return <div className="add-property-area pd-top-120">
               <div className="container">
                 <form>
@@ -15,13 +28,13 @@ class YeniEkle extends Component {
                       <div className="col-12">
                         <label className="single-input-inner style-bg-border">
                           <span className="label">İşletme Adı</span>
-                          <input type="text" />
+                          <input type="text" name="isletmeAdi" onChange={handleChange}/>
                         </label>
                       </div>
                       <div className="col-md-6">
                         <div className="single-select-inner style-bg-border">
                           <span className="label">İşletme türünüz</span>
-                          <select>
+                          <select name="isletmeTuru" onChange={handleChange}>
                             <option value={1}>Canlı Müzik/Bar</option>
                             <option value={2}>Kafe</option>
                             <option value={3}>Çay bahçesi</option>
@@ -44,33 +57,33 @@ class YeniEkle extends Component {
                       <div className="col-md-3">
                         <label className="single-input-inner style-bg-border">
                           <span className="label">İl</span>
-                          <input type="text" />
+                          <input type="text" name="il" onChange={handleChange} />
                         </label>
                       </div>
                       <div className="col-md-3">
                         <label className="single-input-inner style-bg-border">
                           <span className="label">İlçe</span>
-                          <input type="text" />
+                          <input type="text" name="ilce" onChange={handleChange} />
                         </label>
                       </div>
                       <div className="col-md-2">
                         <label className="single-input-inner style-bg-border">
                           <span className="label">Mahalle</span>
-                          <input type="text" />
+                          <input type="text" name="mahalle" onChange={handleChange} />
                         </label>
                       </div>
                       <div className="col-md-2">
                         <label className="single-input-inner style-bg-border">
                           <span className="label">Sokak</span>
-                          <input type="text" />
+                          <input type="text" name="sokak" onChange={handleChange} />
                         </label>
                       </div>
                       <div className="col-md-2">
                         <label className="single-input-inner style-bg-border">
                           <span className="label">No</span>
-                          <input type="text" />
+                          <input type="text" name="no" onChange={handleChange} />
                         </label>
-                      </div>
+                      </div> 
                       
                   </div>
                   <div className="col-12">
@@ -83,13 +96,10 @@ class YeniEkle extends Component {
                           </div>
                         </div>
                       </div>
-                  <button className="btn btn-base">Gönderin</button>
+                  <button className="btn btn-base" onClick={handleSubmit}>Gönderin</button>
                   </div>
                 </form>
               </div>
             </div>
 
         }
-}
-
-export default YeniEkle
