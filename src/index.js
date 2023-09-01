@@ -7,6 +7,7 @@ import SignUp from './components/sign-up';
 import IsletmeEkle from './components/IsletmeEkle';
 import Contact from './components/contact';
 import IsletmeDetayPage from './components/IsletmeDetayPage';
+import Panel from './Panel';
 
 
 class Root extends Component {
@@ -21,6 +22,7 @@ class Root extends Component {
                         <Route  path="/sign-in" component={SignIn} />
                         <Route  path="/sign-up" component={SignUp} />
                         <Route  path="/contact" component={Contact} />
+                        <Route path='/panel' component={Panel}/>
 	                </Switch>
 	                </div>
                 </HashRouter>

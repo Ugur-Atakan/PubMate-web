@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 class YeniEkle extends Component {
 
@@ -37,26 +36,9 @@ class YeniEkle extends Component {
                             <option value={1}>Öğrencilere uygun</option>
                             <option value={2}>Orta Direkt</option>
                             <option value={3}>Para sorunu olmayanlar</option>
+                            <option value={4}>Normal</option>
+                            <option value={5}>Diğer</option>
                           </select>
-                        </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div className="single-select-inner style-bg-border">
-                          <span className="label">Dışarda bahçeniz var mı</span>
-                          <select>
-                            <option value={true}>Var</option>
-                            <option value={false}>Yok</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div className="col-12">
-                        <div className="avatar-upload-input text-center">
-                          <img src={publicUrl+"assets/img/icon/upload.png"} alt="img" />
-                          <h2>İşletmenize ait bir görsel yükleyin</h2>
-                          <div className="avatar-edit-input">
-                            <input className="btn btn-base" type="file" id="imageUpload" accept=".png, .jpg, .jpeg" />
-                            <label className="btn btn-base" htmlFor="imageUpload">Yüklemek için tıklayın</label>
-                          </div>
                         </div>
                       </div>
                       <div className="col-md-3">
@@ -71,47 +53,37 @@ class YeniEkle extends Component {
                           <input type="text" />
                         </label>
                       </div>
-                      <div className="col-md-6">
+                      <div className="col-md-2">
                         <label className="single-input-inner style-bg-border">
-                          <span className="label">Mahalle/Semt/Sokak Açık adres</span>
+                          <span className="label">Mahalle</span>
                           <input type="text" />
                         </label>
                       </div>
-                      <div className="col-md-12">
+                      <div className="col-md-2">
                         <label className="single-input-inner style-bg-border">
-                          <span className="label">İşletmenize ait varsa Google Maps Linki</span>
+                          <span className="label">Sokak</span>
                           <input type="text" />
                         </label>
                       </div>
-                    </div>
+                      <div className="col-md-2">
+                        <label className="single-input-inner style-bg-border">
+                          <span className="label">No</span>
+                          <input type="text" />
+                        </label>
+                      </div>
+                      
                   </div>
-                  <div className="btn btn-base hover-none">Yönetici bilgileri</div>
-                  <div className="property-form-grid">
-                    <div className="row">
-                      <div className="col-md-4">
-                        <label className="single-input-inner style-bg-border">
-                          <input type="text" placeholder="Adınız Soyadınız" />
-                        </label>
+                  <div className="col-12">
+                        <div className="avatar-upload-input text-center">
+                          <img src={publicUrl+"assets/img/icon/upload.png"} alt="img" />
+                          <h2>İşletmenize ait bir görsel yükleyin</h2>
+                          <div className="avatar-edit-input">
+                            <input className="btn btn-base" type="file" id="imageUpload" accept=".png, .jpg, .jpeg" />
+                            <label className="btn btn-base" htmlFor="imageUpload">Yüklemek için tıklayın</label>
+                          </div>
+                        </div>
                       </div>
-                      <div className="col-md-4">
-                        <label className="single-input-inner style-bg-border">
-                          <input type="text" placeholder="Email adresiniz" />
-                        </label>
-                      </div>
-                      <div className="col-md-4">
-                        <label className="single-input-inner style-bg-border">
-                          <input type="text" placeholder="Telefon numaranız" />
-                        </label>
-                      </div>
-                      <div className="col-12">
-                        <label className="single-input-inner style-bg-border">
-                          <textarea placeholder="İşletmeniz hakkında bir özet mesaj" defaultValue={""} />
-                        </label>
-                      </div>
-                      <div className="col-12 text-center mb-4">
-                        <button className="btn btn-base">Gönderin</button>
-                      </div>
-                    </div>
+                  <button className="btn btn-base">Gönderin</button>
                   </div>
                 </form>
               </div>
